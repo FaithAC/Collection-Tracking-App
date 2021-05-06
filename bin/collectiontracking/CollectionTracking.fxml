@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<VBox prefHeight="600.0" prefWidth="800.0" styleClass="theme" stylesheets="@../../../../OneDrive/Desktop/SENIOR%20PROJECT%20STUFF/Collection%20Tracking%20App%20(SENIOR%20PROJECT)/src/collectiontracking/collectionTracking.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="collectiontracking.CollectionTrackingController">
+   <children>
+      <HBox VBox.vgrow="NEVER">
+         <children>
+            <HBox alignment="CENTER_RIGHT" spacing="15.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="newItem" mnemonicParsing="false" onAction="#newItemFired" text="New Item" />
+                  <Button fx:id="saveCollectionItem" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#saveItemFired" text="Save Item" />
+                  <Button fx:id="deleteCollectionItem" layoutX="122.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteItemFired" text="Delete Item" />
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" left="10.0" right="15.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <SplitPane dividerPositions="0.25" VBox.vgrow="ALWAYS">
+         <items>
+            <ListView fx:id="collectionList" SplitPane.resizableWithParent="false" />
+            <SplitPane dividerPositions="0.35" orientation="VERTICAL">
+              <items>
+                  <TableView fx:id="itemTable">
+                    <columns>
+                      <TableColumn fx:id="colItemName" prefWidth="188.0" text="Item Name" />
+                      <TableColumn fx:id="colItemState" prefWidth="189.0" text="Item State" />
+                        <TableColumn fx:id="colGameOfOrigin" prefWidth="215.0" text="Origin" />
+                    </columns>
+                  </TableView>
+                <AnchorPane fx:id="descriptionArea">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="4.0" spacing="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="20.995">
+                           <children>
+                              <Label fx:id="displayedItemLabel" layoutX="14.0" layoutY="14.0" minWidth="-Infinity" text="ITEM/COLLECTION" />
+                              <TextField fx:id="gameOfOrigin" layoutX="279.0" layoutY="4.0" prefHeight="65.0" prefWidth="281.0" text="GAME OF ORIGIN" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Label layoutX="14.0" layoutY="94.0" text="Description" />
+                        <TextArea fx:id="itemDescTextArea" layoutX="14.0" layoutY="139.0" prefHeight="235.0" prefWidth="557.0" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </items>
+      </SplitPane>
+   </children>
+</VBox>
